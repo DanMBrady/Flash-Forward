@@ -1,6 +1,7 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import { Community } from "../community/Community"
 import { Library } from "../library/Library"
+import { NewComic } from "../library/NewComic"
 export const ApplicationViews = () => {
 	return (
 		 <Routes>
@@ -18,6 +19,7 @@ export const ApplicationViews = () => {
             </Route>
                 <Route path="library" element={ <Library/>} />
                 <Route path="community" element={ <Community/> } />
+                <Route path="newComic" element={ <NewComic/> } />
                 
         </Routes>
     )

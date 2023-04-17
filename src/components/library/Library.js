@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import "./Library.css"
+import { useNavigate } from "react-router-dom"
 
 export const Library=()=>{
     const localHoneyUser = localStorage.getItem("honey_user")
@@ -8,6 +9,7 @@ export const Library=()=>{
     const[reading,setReading]=useState([])
     const [alreadyRead,setAlreadyRead]=useState([])
     const [eras,setEras]=useState([])
+    const navigate=useNavigate()
 useEffect(
     ()=>{
          fetch(`http://localhost:8088/reviews?_expand=comic&readStatId=1&userId=${honeyUserObject.id}`)
@@ -61,6 +63,7 @@ useEffect(
          <div className="library">
         <div className="reading">
         <h1>My Comic Library</h1>
+        <button className="button" onClick={() => navigate("/newComic")}>New Comic</button>
        <h2>Currently Reading</h2>
        <article className="comicContainer">
        {
@@ -72,7 +75,7 @@ useEffect(
             <article>{read?.comic?.title} </article>
             <article>Author: {read?.comic?.author}</article>
           <article>Era: {comicEra?.era}</article>
-            
+           
         </article>
         })
        }
@@ -84,7 +87,7 @@ useEffect(
        <h2>To Be Read</h2>
        <article className="comicContainer">
        {
-        (toRead.length===0) ?  <article className="comic"><a>You haven't added anything</a> to your To Read yet</article> :
+        (toRead.length===0) ?  <article className="comic"><a>You haven't added anything</a> to your To Be Read yet</article> :
 
         toRead.map(read=>{
             const comicEra= eras.find(era=>era.id===read?.comic?.eraId)

@@ -31,3 +31,36 @@
 .image{
     height:240px;
 }
+
+
+
+.button{
+    background-color: rgb(201, 6, 6);
+    color:white;
+    font-weight: 600;
+    font-size: larger;
+}
+
+.buttonW{
+    background-color: white;
+    color:black;
+    font-weight: 600;
+    font-size: larger;
+}
+
+.era{
+    display: flex;
+}
+
+.eraForm{
+    margin-right: 25px;
+}
+
+.newComicContainer{
+    background: rgb(201, 6, 6);
+    padding:25px;
+    color:white;
+    font-weight: 500;
+    border-radius: 20px;
+    border: 5px solid black;
+}
