@@ -8,7 +8,7 @@
 
 .comic{
     background: rgb(201, 6, 6);
-    height:320px;
+    height:340px;
     width:28%;
     margin: 20px;
     color:white;
@@ -23,9 +23,31 @@
     font-size: larger;
 }
 
+.comicC{
+    background: rgb(201, 6, 6);
+    height:340px;
+    width:28%;
+    margin: 20px;
+    border-radius: 20px;
+    border: 5px solid black;
+}
+
+.comicTop{
+    color:white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: larger;
+}
+
+
 .comicContainer{
     display: flex;
     flex-wrap: wrap;
+    
 }
 
 .image{
@@ -46,6 +68,14 @@
     color:black;
     font-weight: 600;
     font-size: larger;
+}
+
+.buttonR{
+    background-color: rgb(201, 6, 6);
+    color:white;
+    font-weight: 600;
+    font-size: larger;
+    margin-top:7px
 }
 
 .era{
