@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-export const Community=()=>{
+export const Community=({ searchTermState })=>{
     const [comics,setComics]=useState([])
     const [reviews,setReviews]=useState([])
-
+    const [comicsBack,setComicsB]=useState([])
     const localHoneyUser = localStorage.getItem("honey_user")
     const honeyUserObject = JSON.parse(localHoneyUser)
 
@@ -23,6 +23,18 @@ export const Community=()=>{
             .then(response => response.json())
             .then((comicArray)=>{
                 setComics(comicArray)
+            })
+            
+        },
+        []
+    )
+
+    useEffect(
+        ()=>{
+             fetch(`http://localhost:8088/comics?_expand=era`)
+            .then(response => response.json())
+            .then((comicArray)=>{
+                setComicsB(comicArray)
             })
             
         },
@@ -67,8 +79,24 @@ export const Community=()=>{
         .then(response => response.json())
         .then(getAllReviews)
     }
+
+    useEffect(
+        ()=>{
+            const searchedComics = comics.filter(comic=> {
+
+                return comic.title.toLowerCase().startsWith(searchTermState.toLowerCase())
+            })
+            if(searchTermState !==""){
+                setComics(searchedComics)
+                }
+                else{
+                    setComics(comicsBack)
+                }
+        },
+        [ searchTermState ]
+    ) 
+
     return <article>
-       <h1>Community Libary</h1> 
        <div className="comicContainer">
         {
             comics.map(comic=>{

@@ -1,5 +1,6 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import { Community } from "../community/Community"
+import { CommunityContainer } from "../community/CommunityContainer"
 import { EditComic } from "../library/EditComic"
 import { Library } from "../library/Library"
 import { NewComic } from "../library/NewComic"
@@ -20,7 +21,7 @@ export const ApplicationViews = () => {
             </Route>
                 <Route path="library" element={ <Library/>} />
                 <Route path="library/:comicId" element={ <EditComic/>} />
-                <Route path="community" element={ <Community/> } />
+                <Route path="community" element={ <CommunityContainer/> } />
                 <Route path="newComic" element={ <NewComic/> } />
                 
         </Routes>
