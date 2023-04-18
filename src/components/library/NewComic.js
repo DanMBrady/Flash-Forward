@@ -100,7 +100,7 @@ const handleSaveButtonClick = (event) => {
                 <div className="form-group">
                     <label htmlFor="specialty">Title:</label>
                     <input
-                        required autoFocus
+                        required 
                         type="text"
                         className="form-control"
                         placeholder="Enter Title of Comic"
@@ -117,7 +117,7 @@ const handleSaveButtonClick = (event) => {
                 <div className="form-group">
                     <label htmlFor="specialty">Author:</label>
                     <input
-                        required autoFocus
+                        required 
                         type="text"
                         className="form-control"
                         placeholder="Enter Author of Comic"
@@ -134,7 +134,7 @@ const handleSaveButtonClick = (event) => {
                 <div className="form-group">
                     <label htmlFor="specialty">Cover:</label>
                     <input
-                        required autoFocus
+                        required 
                         type="text"
                         className="form-control"
                         placeholder="Enter Link of Comic Cover"
@@ -156,7 +156,7 @@ const handleSaveButtonClick = (event) => {
                         return <article key ={era.id}>{era.era}
                    
                     <input
-                        required autoFocus
+                        required 
                         type="radio"
                         name="types"
                         className="eraForm"
@@ -182,7 +182,7 @@ const handleSaveButtonClick = (event) => {
                         return <article key ={readStat.id}>{readStat.type}
                    
                     <input
-                        required autoFocus
+                        required 
                         type="radio"
                         name="era"
                         className="eraForm"

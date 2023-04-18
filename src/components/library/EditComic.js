@@ -10,7 +10,7 @@ export const EditComic =()=>{
         author:"",
         photo:"https://c1.wallpaperflare.com/preview/690/220/870/marvel-comics-cartoon-entertainment.jpg",
         eraId:1,
-       
+        userId:-1
     })
     const [review,setReview]=useState({
         readStatId:1,
@@ -130,7 +130,7 @@ export const EditComic =()=>{
             <div className="form-group">
                 <label htmlFor="specialty">Title:</label>
                 <input
-                    required autoFocus
+                    required 
                     type="text"
                     className="form-control"
                     value={comic.title}
@@ -152,7 +152,7 @@ export const EditComic =()=>{
             <div className="form-group">
                 <label htmlFor="specialty">Author:</label>
                 <input
-                    required autoFocus
+                    required 
                     type="text"
                     className="form-control"
                     value={comic.author}
@@ -173,7 +173,7 @@ export const EditComic =()=>{
             <div className="form-group">
                 <label htmlFor="specialty">Cover:</label>
                 <input
-                    required autoFocus
+                    required 
                     type="text"
                     className="form-control"
                      value={comic.photo}
@@ -200,11 +200,11 @@ export const EditComic =()=>{
                             
                         return (era.id === comic.eraId) ? <article key ={era.id}>{era.era}
                      <input
-                        required autoFocus
+                        required 
                         type="radio"
                         name="types"
                         className="eraForm"
-                        checked 
+                        defaultChecked 
                         value={era.id}
                         onChange={
                             (evt) => {
@@ -215,7 +215,7 @@ export const EditComic =()=>{
                         } />
                         </article> : <article key ={era.id}>{era.era}
                      <input
-                        required autoFocus
+                        required 
                         type="radio"
                         name="types"
                         className="eraForm"
@@ -243,11 +243,11 @@ export const EditComic =()=>{
                         return (readStat.id === review.readStatId) ? <article key ={readStat.id}>{readStat.type}
                    
                     <input
-                        required autoFocus
+                        required 
                         type="radio"
                         name="era"
                         className="eraForm"
-                        checked
+                        defaultChecked
                         value={readStat.id}
                         onChange={
                             (evt) => {
@@ -259,7 +259,7 @@ export const EditComic =()=>{
                         </article> :<article key ={readStat.id}>{readStat.type}
                    
                    <input
-                       required autoFocus
+                       required 
                        type="radio"
                        name="era"
                        className="eraForm"
