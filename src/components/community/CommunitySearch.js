@@ -1,6 +1,6 @@
 export const CommunitySearch =({ setterFunction })=>{
    return <article>
-          <h1>Community Libary</h1> 
+          <h1>Community Library</h1> 
           <div>
             <input className="comicSearch"
             onChange={
