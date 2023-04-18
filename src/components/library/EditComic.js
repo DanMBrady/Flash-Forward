@@ -94,6 +94,29 @@ export const EditComic =()=>{
         }) 
     }
 
+    const handleRemoveButtonClick = (event) => {
+        event.preventDefault()
+        
+        
+        return fetch(`http://localhost:8088/reviews/${review.id}`, {
+            method:"DELETE"
+        })
+        .then(() =>{
+            navigate("/library")
+        }) 
+    }
+
+    const handleDeleteButtonClick = (event) => {
+        event.preventDefault()
+        
+        
+        return fetch(`http://localhost:8088/comics/${comicId}`, {
+            method:"DELETE"
+        })
+        .then(() =>{
+            navigate("/library")
+        }) 
+    }
    
     return <article>
     <h1>Edit Comic</h1>
@@ -254,6 +277,10 @@ export const EditComic =()=>{
                 </div>
             </fieldset>
             <button  onClick ={(clickEvent)=> handleSaveButtonClick(clickEvent)} className="buttonW">Save Comic</button>
+            {
+            (comic.userId===honeyUserObject.id) ? 
+            <button  onClick ={(clickEvent)=> handleDeleteButtonClick(clickEvent)} className="buttonW">Delete Comic</button>
+           : <button  onClick ={(clickEvent)=> handleRemoveButtonClick(clickEvent)} className="buttonW">Remove Comic</button>}
         </form>
         </article>
         </article>
