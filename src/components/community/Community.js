@@ -47,7 +47,7 @@ export const Community=()=>{
     
        
         const ToSendToAPIReview = {
-         readStatId:1,
+         readStatId:2,
          review:"",
          userId:honeyUserObject.id,
          comicId:comicId,
