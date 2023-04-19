@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-export const Community=({ searchTermState })=>{
+export const Community=({ searchTermState,selectTermState })=>{
     const [comics,setComics]=useState([])
     const [reviews,setReviews]=useState([])
-    const [comicsBack,setComicsB]=useState([])
+    const [filteredComics,setfilteredComics]=useState([])
+    const [eras,setEras]=useState([{
+        id:1
+    }])
     const localHoneyUser = localStorage.getItem("honey_user")
     const honeyUserObject = JSON.parse(localHoneyUser)
 
@@ -23,6 +26,7 @@ export const Community=({ searchTermState })=>{
             .then(response => response.json())
             .then((comicArray)=>{
                 setComics(comicArray)
+                setfilteredComics(comicArray)
             })
             
         },
@@ -31,15 +35,16 @@ export const Community=({ searchTermState })=>{
 
     useEffect(
         ()=>{
-             fetch(`http://localhost:8088/comics?_expand=era`)
+             fetch(`http://localhost:8088/eras`)
             .then(response => response.json())
-            .then((comicArray)=>{
-                setComicsB(comicArray)
+            .then((eraArray)=>{
+                setEras(eraArray)
             })
             
         },
         []
     )
+
 
     useEffect(
         ()=>{
@@ -86,20 +91,38 @@ export const Community=({ searchTermState })=>{
 
                 return comic.title.toLowerCase().startsWith(searchTermState.toLowerCase())
             })
-            if(searchTermState !==""){
-                setComics(searchedComics)
-                }
-                else{
-                    setComics(comicsBack)
-                }
+            
+               setfilteredComics(searchedComics)
+              
+               
+                
         },
         [ searchTermState ]
+    ) 
+
+    useEffect(
+        ()=>{
+           
+             if(selectTermState === "10"){
+                     setfilteredComics(comics)
+    
+                }else{
+                    setfilteredComics(comics.filter(comic=> comic.eraId === parseInt(selectTermState)
+                         ))
+                }
+            
+            
+                
+            
+           
+        },
+        [ selectTermState ]
     ) 
 
     return <article>
        <div className="comicContainer">
         {
-            comics.map(comic=>{
+            filteredComics.map(comic=>{
                 const comicReviews= reviews.filter(review=>review.comicId===comic.id)
                 const userReview = comicReviews.filter(comic=> comic.userId === honeyUserObject.id)
                 const comicId=comic.id
