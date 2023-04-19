@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import Swal from "sweetalert2"
 export const NewComic=()=>{
     const navigate= useNavigate()
     const localHoneyUser = localStorage.getItem("honey_user")
@@ -19,7 +20,6 @@ const [review,setReview]=useState({
     userId:honeyUserObject.id,
     isFavorite:false,
 })
-
 
 useEffect(
     ()=>{
@@ -64,7 +64,11 @@ const handleSaveButtonClick = (event) => {
         isFavorite:review.isFavorite
     }
 
-   return (comic.title===""|| comic.author==="") ? window.alert("You must fill out the entire form") :
+   return (comic.title===""|| comic.author==="") ?  
+   Swal.fire({
+    text:"You must fill out the entire form",
+    confirmButtonColor:" rgb(201, 6, 6)",
+}) :
     
      fetch("http://localhost:8088/comics", {
         method:"POST",
