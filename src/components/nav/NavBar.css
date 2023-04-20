@@ -1,11 +1,8 @@
 .navbar {
     display: flex;
-    background:#cf1c15;
-    height:80px;
+   
     justify-content: flex-start;
-    align-items: center;
-    margin: 0px;
-    width: 100%;
+   
 }
 
 
