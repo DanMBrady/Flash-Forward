@@ -1,8 +1,10 @@
 .navbar {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
+    background:#cf1c15;
+    height:80px;
+    align-items: center;
 }
+
 
 .navbar__item {
     flex-basis: 20%;
@@ -15,4 +17,8 @@
 
 .logo{
     height:40px
+}
+
+.navbarS{
+    list-style-type: none;
 }

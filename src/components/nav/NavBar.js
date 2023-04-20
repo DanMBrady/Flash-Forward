@@ -7,22 +7,22 @@ export const NavBar = () => {
 
     return (
         <ul className="navbar">
-             <li className="navbar__item active">
-             <Link className="navbar__link" to="/"> <img className="logo"src ={logo}/></Link>
+             <li className="navbarS">
+             <Link className="navbarB" to="/"> <img className="logo"src ={logo}/></Link>
             </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/community">Community Library</Link>
+            <li className="navbarS">
+                <button className="navbarB"onClick={() => navigate(`/community`)}>Community Library</button>
             </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/library">Library</Link>
-            </li>
+            <li className="navbarS">
+            <button className="navbarB"onClick={() => navigate(`/library`)}> Library</button>
+             </li>
             {
                 localStorage.getItem("honey_user")
                     ? <li className="navbar__item navbar__logout">
-                        <Link className="navbar__link" to="" onClick={() => {
+                        <button className="" to="" onClick={() => {
                             localStorage.removeItem("honey_user")
                             navigate("/", {replace: true})
-                        }}>Logout</Link>
+                        }}>Logout</button>
                     </li>
                     : ""
             }
