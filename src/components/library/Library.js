@@ -117,7 +117,7 @@ useEffect(
             return<article key={`alreadyRead--${read.id}`} className="comicC">
                   <div className="comicTop">
            <article><img className="image"src={read?.comic?.photo}></img></article>
-                <article><Link className="titleLink" to={`/library/${read?.comic.id}/add`}>{read?.comic?.title}</Link></article>
+                <article><Link className="titleLink" to={`/library/${read?.comic?.id}/add`}>{read?.comic?.title}</Link></article>
                 <article>Author: {read?.comic?.author}</article>
                 <article>Era: {comicEra?.era}</article>
                 </div>

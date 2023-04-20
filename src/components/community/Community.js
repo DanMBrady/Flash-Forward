@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 export const Community=({ searchTermState,selectTermState })=>{
     const [comics,setComics]=useState([])
     const [reviews,setReviews]=useState([])
@@ -129,7 +130,7 @@ export const Community=({ searchTermState,selectTermState })=>{
                 return <article key ={`comic--${comic.id}`} className="comicC">
                     <div className="comicTop">
                     <section><img className="image"src={comic.photo}></img></section>
-                    <section>{comic.title}</section>
+                    <section><Link className="titleLink" to={`/community/${comic.id}/reviews`}>{comic.title}</Link></section>
                     <section>Author: {comic.author}</section>
                     <section>Era: {comic?.era?.era}</section>
                     </div>

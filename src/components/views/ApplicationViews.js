@@ -1,6 +1,7 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import { Community } from "../community/Community"
 import { CommunityContainer } from "../community/CommunityContainer"
+import { CommunityReviews } from "../community/CommunityReviews"
 import { AddReview } from "../library/AddReview"
 import { EditComic } from "../library/EditComic"
 import { Library } from "../library/Library"
@@ -24,6 +25,7 @@ export const ApplicationViews = () => {
                 <Route path="library/:comicId" element={ <EditComic/>} />
                 <Route path="library/:comicId/add" element={ <AddReview/>} />
                 <Route path="community" element={ <CommunityContainer/> } />
+                <Route path="community/:comicId/reviews" element={ <CommunityReviews/>} />
                 <Route path="newComic" element={ <NewComic/> } />
                 
         </Routes>
