@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import "./Library.css"
+import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 
 export const Library=()=>{
@@ -116,11 +117,12 @@ useEffect(
             return<article key={`alreadyRead--${read.id}`} className="comicC">
                   <div className="comicTop">
            <article><img className="image"src={read?.comic?.photo}></img></article>
-                <article>{read?.comic?.title} </article>
+                <article><Link className="titleLink" to={`/library/${read?.comic.id}/add`}>{read?.comic?.title}</Link></article>
                 <article>Author: {read?.comic?.author}</article>
                 <article>Era: {comicEra?.era}</article>
                 </div>
                 <button className="buttonR" onClick={() => navigate(`/library/${read?.comic?.id}`)}>Edit Comic</button>
+                
             </article>
         })
        }
