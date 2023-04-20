@@ -5,6 +5,9 @@
    
 }
 
+h1{
+    font-weight: 400;
+}
 
 .navbar__item {
     flex-basis: 20%;
