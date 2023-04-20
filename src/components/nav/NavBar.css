@@ -2,7 +2,10 @@
     display: flex;
     background:#cf1c15;
     height:80px;
+    justify-content: flex-start;
     align-items: center;
+    margin: 0px;
+    width: 100%;
 }
 
 
@@ -16,9 +19,17 @@
 }
 
 .logo{
-    height:40px
+    height:60px
 }
 
 .navbarS{
     list-style-type: none;
+}
+
+.navbarB{
+    height:80px;
+    width:200px;
+    background:#cf1c15;
+    color:black;
+    font-weight: 900;
 }
