@@ -15,18 +15,40 @@
     margin-left: auto;
 }
 
-.logo{
-    height:60px
+.navbar__link{
+    color: black;
+    font-size: 20px;
+    background-image: linear-gradient(
+    to right,
+    rgb(201, 6, 6),
+    rgb(201, 6, 6) 50%,
+    #000 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
 }
 
-.navbarS{
-    list-style-type: none;
-}
+.navbar__link:before{
+    content: '';
+    background: rgb(201, 6, 6);
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+  }
 
-.navbarB{
-    height:80px;
-    width:200px;
-    background:#cf1c15;
-    color:black;
-    font-weight: 900;
-}
+  .navbar__link:hover {
+    background-position: 0;
+   }
+
+  .navbar__link:hover::before{
+    width: 100%;
+  }
