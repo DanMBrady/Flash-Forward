@@ -83,7 +83,7 @@ const alreadyReadSorted = alreadyRead.sort(function(a,b) {
     return <article>
          <div className="library">
         <div className="reading">
-        <h1>My Comic Library</h1>
+        <h1>My Library</h1>
         <button className="button" onClick={() => navigate("/newComic")}>New Comic</button>
        <h2 className="readHeader">Currently Reading</h2>
        <article className="comicContainer">
