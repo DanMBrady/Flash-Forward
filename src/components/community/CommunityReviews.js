@@ -9,7 +9,7 @@ export const CommunityReviews =()=>{
     const [reviews,setReviews]=useState([])
     useEffect(
         ()=>{
-            fetch(`http://localhost:8088/reviews?comicId=${comicId}`)
+            fetch(`http://localhost:8088/reviews?_expand=user&comicId=${comicId}`)
             .then(response => response.json())
             .then((data)=>{
                 setReviews(data)
@@ -43,7 +43,7 @@ export const CommunityReviews =()=>{
                 
                return (review.review === "") ? "" : 
                 <article key ={review.id}>
-                  <li>{review.review}</li> 
+                  <article>{review?.user?.userName}- "{review.review}"</article> 
              
                   </article>
              })

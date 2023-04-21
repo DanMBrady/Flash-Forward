@@ -6,6 +6,7 @@ export const Register = (props) => {
     const [customer, setCustomer] = useState({
         email: "",
         fullName: "",
+        userName:"",
         isAdmin: false
     })
     let navigate = useNavigate()
@@ -62,6 +63,12 @@ export const Register = (props) => {
                     <input onChange={updateCustomer}
                            type="text" id="fullName" className="form-control"
                            placeholder="Enter your name" required autoFocus />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="email"> Username </label>
+                    <input onChange={updateCustomer}
+                        type="userName" id="userName" className="form-control"
+                        placeholder="Username" required />
                 </fieldset>
                 <fieldset>
                     <label htmlFor="email"> Email address </label>
