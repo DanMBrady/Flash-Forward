@@ -28,6 +28,7 @@ export const CommunityReviews =()=>{
         },
         [comicId]
        )
+       const noReviews = reviews.every(review=> review.review === "")
 
     return <article className="reviewS">
         <h1>Community Reviews</h1>
@@ -35,18 +36,19 @@ export const CommunityReviews =()=>{
         <article><img className="comicCoverA"src ={comic.photo}></img></article>
         <article>{comic.title}</article>
         <article>Author: {comic.author}</article>
-        <h2>Reviews</h2>
-         <ul>
-       {
-        reviews.map(review=>{
-           return<article key ={review.id}>
-            {review.review === "" ? "" :
-            <li>{review.review}</li> 
+        <h2 className="reviewF">Reviews</h2>
+
+        {
+            (noReviews) ? "There are currently no reviews" :  reviews.map(review=>{
+                
+               return (review.review === "") ? "" : 
+                <article key ={review.id}>
+                  <li>{review.review}</li> 
+             
+                  </article>
+             })
         }
-             </article>
-        })
-       }
-       </ul>
+
        </article>
     </article>
 }
