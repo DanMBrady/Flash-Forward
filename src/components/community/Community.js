@@ -23,7 +23,7 @@ export const Community=({ searchTermState,selectTermState })=>{
 
     useEffect(
         ()=>{
-             fetch(`http://localhost:8088/comics?_expand=era`)
+             fetch(`http://localhost:8088/comics?_sort=title&_expand=era`)
             .then(response => response.json())
             .then((comicArray)=>{
                 setComics(comicArray)
@@ -58,6 +58,14 @@ export const Community=({ searchTermState,selectTermState })=>{
         },
         []
     )
+
+    const communitySorted = filteredComics.sort(function(a,b) {
+        if(a.title.toLowerCase() < b.title.toLowerCase()
+        ) return -1
+        if(a.title.toLowerCase() > b.title.toLowerCase()
+        ) return 1
+        return 0
+    })
 
     const handleSaveButtonClick = (event,comicId) => {
         event.preventDefault()
@@ -123,7 +131,7 @@ export const Community=({ searchTermState,selectTermState })=>{
     return <article>
        <div className="comicContainer">
         {
-            filteredComics.map(comic=>{
+            communitySorted.map(comic=>{
                 const comicReviews= reviews.filter(review=>review.comicId===comic.id)
                 const userReview = comicReviews.filter(comic=> comic.userId === honeyUserObject.id)
                 const comicId=comic.id

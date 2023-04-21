@@ -56,7 +56,27 @@ useEffect(
     []
 )
 
-
+const readingSorted = reading.sort(function(a,b) {
+    if(a.comic.title.toLowerCase() < b.comic.title.toLowerCase()
+    ) return -1
+    if(a.comic.title.toLowerCase() > b.comic.title.toLowerCase()
+    ) return 1
+    return 0
+})
+const toReadSorted = toRead.sort(function(a,b) {
+    if(a.comic.title.toLowerCase() < b.comic.title.toLowerCase()
+    ) return -1
+    if(a.comic.title.toLowerCase() > b.comic.title.toLowerCase()
+    ) return 1
+    return 0
+})
+const alreadyReadSorted = alreadyRead.sort(function(a,b) {
+    if(a.comic.title.toLowerCase() < b.comic.title.toLowerCase()
+    ) return -1
+    if(a.comic.title.toLowerCase() > b.comic.title.toLowerCase()
+    ) return 1
+    return 0
+})
 
 
 
@@ -69,7 +89,7 @@ useEffect(
        <article className="comicContainer">
        {
         (reading.length===0) ? <article className="comic"><a>You haven't added anything</a> to your Currently Reading yet</article> :
-        reading.map(read=>{
+        readingSorted.map(read=>{
             const comicEra= eras.find(era=>era.id===read?.comic?.eraId)
             return<article key={`currentlyReading--${read.id}`} className="comicC">
                 <div className="comicTop">
@@ -92,7 +112,7 @@ useEffect(
        {
         (toRead.length===0) ?  <article className="comic"><a>You haven't added anything</a> to your To Be Read yet</article> :
 
-        toRead.map(read=>{
+        toReadSorted.map(read=>{
             const comicEra= eras.find(era=>era.id===read?.comic?.eraId)
                 return<article key={`toRead--${read.id}`} className="comicC">
                     <div className="comicTop">
@@ -112,7 +132,7 @@ useEffect(
        <article className="comicContainer">
        {
         (alreadyRead.length===0) ?  <article className="comic"><a>You haven't added anything</a> to your Already Read yet</article> :
-        alreadyRead.map(read=>{
+        alreadyReadSorted.map(read=>{
             const comicEra= eras.find(era=>era.id===read?.comic?.eraId)
             return<article key={`alreadyRead--${read.id}`} className="comicC">
                   <div className="comicTop">
