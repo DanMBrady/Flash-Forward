@@ -55,3 +55,9 @@ h1{
   .navbar__link:hover::before{
     width: 100%;
   }
+
+  .log{
+    margin-left: 100px;
+  }
+
+  
