@@ -7,15 +7,24 @@ import { AddReview } from "../library/AddReview"
 import { EditComic } from "../library/EditComic"
 import { Library } from "../library/Library"
 import { NewComic } from "../library/NewComic"
+import "./Home.css"
 export const ApplicationViews = () => {
 	return (
 		 <Routes>
             <Route path="/" element={
                 <>
                 <div className="home">
-                  <h1>Flash Forward</h1>
+                  <div className="homeContainer">
+                   <h2 className="largeHeader">Welcome to Flash Forward</h2> 
+                   <section className="larger">Here at Flash Forward users have the ability to create comic libraries and share 
+                    their love of comics with others. Through writing reviews and adding other users comics,
+                     you'll be able to connect with users just like you. Welcome to Flash Foward, a community that loves comics 
+                     and sharing them with others.
+
+                      </section>
+                  </div>
                   
-                  <img className="logo"src=""></img>
+                  
                   </div>
                   <Outlet />
               </>

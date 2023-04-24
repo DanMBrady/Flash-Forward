@@ -30,8 +30,23 @@ export const CommunityReviews =()=>{
        )
        const noReviews = reviews.every(review=> review.review === "")
 
+
+       const handleDeleteButtonClick = (event) => {
+        event.preventDefault()
+        
+        
+        return fetch(`http://localhost:8088/comics/${comicId}`, {
+            method:"DELETE"
+        })
+        .then(() =>{
+            navigate("/community")
+        }) 
+    }
+
+
     return <article className="reviewS">
         <h1>Community Reviews</h1>
+        
         <article className="newComicContainer">
         <article><img className="comicCoverA"src ={comic.photo}></img></article>
         <article>{comic.title}</article>
@@ -47,8 +62,16 @@ export const CommunityReviews =()=>{
              
                   </article>
              })
-        }
-
+             
+             
+            }
+   
        </article>
+   
+            
+    {   
+            (honeyUserObject.admin) ? <article><button onClick ={(clickEvent)=> handleDeleteButtonClick(clickEvent)} className="buttonReview">Delete Comic</button></article> : ""
+    }
+     
     </article>
 }

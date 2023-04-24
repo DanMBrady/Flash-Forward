@@ -78,6 +78,15 @@
     font-size: larger;
     margin-top:7px
 }
+.buttonReview{
+    background-color: rgb(201, 6, 6);
+    color:white;
+    font-weight: 600;
+    font-size: larger;
+    margin-left:8px;
+    margin-top:7px;
+    margin-bottom:10px
+}
 
 
 .era{
