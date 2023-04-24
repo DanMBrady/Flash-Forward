@@ -1,7 +1,16 @@
+.body{
+  margin: 50px;
+}
+
 .navbar {
     display: flex;
-   
+    background:#cf1c15;
     justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height:90px
+    
    
 }
 
@@ -21,11 +30,12 @@ h1{
 .navbar__link{
     color: black;
     font-size: 20px;
+    font-weight: 500;
     background-image: linear-gradient(
     to right,
-    rgb(201, 6, 6),
-    rgb(201, 6, 6) 50%,
-    #000 50%);
+   white,
+    white 50%,
+  white 50%);
     background-size: 200% 100%;
     background-position: -100%;
     display: inline-block;
@@ -38,7 +48,7 @@ h1{
 
 .navbar__link:before{
     content: '';
-    background: rgb(201, 6, 6);
+    background: white;
     display: block;
     position: absolute;
     bottom: -3px;
@@ -60,4 +70,20 @@ h1{
     margin-left: 100px;
   }
 
-  
+  .logoF{
+    height:90px;
+    
+  }
+
+  .navStart{
+    
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    list-style-type: none;
+    
+  }
+  .spaceHead{
+    margin-left:90px
+  }

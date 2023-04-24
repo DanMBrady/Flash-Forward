@@ -16,7 +16,9 @@ export const Repairs = () => {
 			<Authorized>
 				<>
 					<NavBar />
+					<div className="body">
 					<ApplicationViews />
+					</div>
 				</>
 			</Authorized>
 
