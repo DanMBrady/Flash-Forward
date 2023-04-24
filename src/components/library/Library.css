@@ -4,12 +4,15 @@
     flex-direction: column;
     justify-content: space-between;
     height:80vw;
+    
 }
-
+.libContainer{
+    margin-left: 60px;
+}
 .comic{
-    background: rgb(201, 6, 6);
+    background: #cf1c15;
     height:340px;
-    width:28%;
+    width:26%;
     margin: 20px;
     color:white;
     display: flex;
@@ -24,7 +27,7 @@
 }
 
 .comicC{
-    background: rgb(201, 6, 6);
+    background: #cf1c15;
     height:340px;
     width:28%;
     margin: 20px;
@@ -57,7 +60,7 @@
 
 
 .button{
-    background-color: rgb(201, 6, 6);
+    background-color:#cf1c15;
     color:white;
     font-weight: 600;
     font-size: larger;
@@ -72,14 +75,14 @@
 }
 
 .buttonR{
-    background-color: rgb(201, 6, 6);
+    background-color:#cf1c15;
     color:white;
     font-weight: 600;
     font-size: larger;
     margin-top:7px
 }
 .buttonReview{
-    background-color: rgb(201, 6, 6);
+    background-color:#cf1c15;
     color:white;
     font-weight: 600;
     font-size: larger;
@@ -98,7 +101,7 @@
 }
 
 .newComicContainer{
-    background: rgb(201, 6, 6);
+    background: #cf1c15;
     padding:25px;
     color:white;
     font-weight: 500;
@@ -152,4 +155,8 @@
 
   .reviewS{
     font-size: larger;
+  }
+
+  .favoriteC{
+    margin-left:60px ;
   }

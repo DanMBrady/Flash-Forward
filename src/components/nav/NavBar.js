@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom"
 import logo from "../photos/logo.png"
+import newLogo from "../photos/newLogo.png"
 import "./NavBar.css"
 
 export const NavBar = () => {
@@ -8,17 +9,20 @@ export const NavBar = () => {
     return (
         <ul className="navbar">
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/">Home</Link>
+                <Link className="" to="/"><img className="logoF"src={newLogo}></img></Link>
             </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/community">Community Library</Link>
+            <div className="navStart">
+            <li >
+                <Link className="navbar__link" to="/community">Community</Link>
             </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/library">Library</Link>
+            <li >
+                <Link className="navbar__link spaceHead" to="/library">Library</Link>
             </li>
-            <li className="navbar__item active">
-                <Link className="navbar__link fav" to="/favorites">Favorites</Link>
+            
+            <li >
+                <Link className="navbar__link spaceHead" to="/favorites">Favorites</Link>
             </li>
+            </div>
             {
                 localStorage.getItem("honey_user")
                     ? <li className="navbar__item navbar__logout">
@@ -29,6 +33,7 @@ export const NavBar = () => {
                     </li>
                     : ""
             }
+            
         </ul>
     )
 }

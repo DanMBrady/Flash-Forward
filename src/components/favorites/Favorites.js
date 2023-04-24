@@ -35,7 +35,7 @@ export const Favorites =() =>{
         return 0
     })
     const noFavorites = comics.every(comic=> comic?.comic?.isFavorite === false)
-    return <article>
+    return <article className="favoriteC">
         <h1>My Favorites</h1>
         <article className="comicContainer">
         {
