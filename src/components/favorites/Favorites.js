@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 
 export const Favorites =() =>{
+    
     const localHoneyUser = localStorage.getItem("honey_user")
     const honeyUserObject = JSON.parse(localHoneyUser)
     const [comics,setComics] =useState([])
