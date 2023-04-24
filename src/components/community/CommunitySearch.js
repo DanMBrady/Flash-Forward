@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import "./Community.css"
 
-export const CommunitySearch =({ setterFunction, selectFunction })=>{
+export const CommunitySearch =({ setterFunction, selectFunction, setterAuthorFunction })=>{
     const [eras,setEras]=useState([])
     const era ={}
     useEffect(
@@ -25,6 +25,13 @@ export const CommunitySearch =({ setterFunction, selectFunction })=>{
                 }
             }
             type="text" placeholder="Find Comics" />
+             <input className="searchAuthor"
+            onChange={
+                (changeEvent)=>{
+                    setterAuthorFunction(changeEvent.target.value)
+                }
+            }
+            type="text" placeholder="Find Authors" />
 <select className="comicSearch" onChange={
     (changeEvent)=>{
         selectFunction(changeEvent.target.value)

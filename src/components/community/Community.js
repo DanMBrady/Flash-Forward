@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
-export const Community=({ searchTermState,selectTermState })=>{
+export const Community=({ searchTermState,selectTermState, searchTermAuthor })=>{
     const [comics,setComics]=useState([])
     const [reviews,setReviews]=useState([])
     const [filteredComics,setfilteredComics]=useState([])
@@ -108,7 +108,20 @@ export const Community=({ searchTermState,selectTermState })=>{
         },
         [ searchTermState ]
     ) 
+    useEffect(
+        ()=>{
+            const searchedAuthors = comics.filter(comic=> {
 
+                return comic.author.toLowerCase().startsWith(searchTermAuthor.toLowerCase())
+            })
+            
+               setfilteredComics(searchedAuthors)
+              
+               
+                
+        },
+        [ searchTermAuthor ]
+    ) 
     useEffect(
         ()=>{
            
@@ -119,11 +132,7 @@ export const Community=({ searchTermState,selectTermState })=>{
                     setfilteredComics(comics.filter(comic=> comic.eraId === parseInt(selectTermState)
                          ))
                 }
-            
-            
-                
-            
-           
+    
         },
         [ selectTermState ]
     ) 
