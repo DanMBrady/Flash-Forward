@@ -276,11 +276,11 @@ export const EditComic =()=>{
                     } </div>
                 </div>
             </fieldset>
-            <button  onClick ={(clickEvent)=> handleSaveButtonClick(clickEvent)} className="buttonW">Save Comic</button>
+            <button  onClick ={(clickEvent)=> handleSaveButtonClick(clickEvent)} className="button-28">Save Comic</button>
             {
             (comic.userId===honeyUserObject.id) ? 
-            <button  onClick ={(clickEvent)=> handleDeleteButtonClick(clickEvent)} className="buttonW">Delete Comic</button>
-           : <button  onClick ={(clickEvent)=> handleRemoveButtonClick(clickEvent)} className="buttonW">Remove Comic</button>}
+            <button  onClick ={(clickEvent)=> handleDeleteButtonClick(clickEvent)} className="button-28">Delete Comic</button>
+           : <button  onClick ={(clickEvent)=> handleRemoveButtonClick(clickEvent)} className="button-28">Remove Comic</button>}
         </form>
         </article>
         </article>

@@ -205,7 +205,7 @@ const handleSaveButtonClick = (event) => {
                     } </div>
                 </div>
             </fieldset>
-            <button  onClick ={(clickEvent)=> handleSaveButtonClick(clickEvent)} className="buttonW">Submit Comic</button>
+            <button  onClick ={(clickEvent)=> handleSaveButtonClick(clickEvent)} className="button-28">Submit Comic</button>
              </form>
              </article>
     </article>
