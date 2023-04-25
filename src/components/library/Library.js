@@ -81,11 +81,11 @@ const alreadyReadSorted = alreadyRead.sort(function(a,b) {
 
 
     return <article>
-        <h1>My Library</h1>
-         <div className="library">
+        <h1 className="libHead">My Library</h1>
+        <button className="button-29" onClick={() => navigate("/newComic")}>New Comic</button>
+        
         <div className="reading">
-        <button className="button" onClick={() => navigate("/newComic")}>New Comic</button>
-       <h2 className="readHeader">Currently Reading</h2>
+       <h2>Currently Reading</h2>
        <article className="comicContainer">
        {
         (reading.length===0) ? <article className="comic"><a>You haven't added anything</a> to your Currently Reading yet</article> :
@@ -148,7 +148,6 @@ const alreadyReadSorted = alreadyRead.sort(function(a,b) {
         })
        }
        </article>
-</div>
 </div>
     </article>
 }

@@ -114,14 +114,14 @@ export const CommunityReviews =()=>{
              
             }
             <section>{ (userReview.length === 0) ?
-                        <button className="buttonR" onClick ={(clickEvent)=> handleSaveButtonClick(clickEvent,CorrectComicId)}>Add Comic</button> : ""
+                        <button className="button-28" onClick ={(clickEvent)=> handleSaveButtonClick(clickEvent,CorrectComicId)}>Add Comic</button> : ""
                         }</section>
    
        </article>
    
             
     {   
-            (honeyUserObject.admin) ? <article><button onClick ={(clickEvent)=> handleDeleteButtonClick(clickEvent)} className="buttonReview">Delete Comic</button></article> : ""
+            (honeyUserObject.admin) ? <article><button onClick ={(clickEvent)=> handleDeleteButtonClick(clickEvent)} className="button-30">Delete Comic</button></article> : ""
     }
      
     </article>

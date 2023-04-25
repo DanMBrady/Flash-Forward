@@ -147,7 +147,7 @@ export const AddReview =()=>{
                          </div>
                 </div>
             </fieldset>
-            <button  onClick ={(clickEvent)=> handleSaveButtonClick(clickEvent)} className="buttonW">Save Review</button>
+            <button  onClick ={(clickEvent)=> handleSaveButtonClick(clickEvent)} className="button-28">Save Review</button>
         </form>
         </article>
     </article>
