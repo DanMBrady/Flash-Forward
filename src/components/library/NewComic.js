@@ -10,7 +10,7 @@ const [readStatus,setReadStatus]=useState([])
 const [comic,setComic]=useState({
     title:"",
     author:"",
-    photo:"https://c1.wallpaperflare.com/preview/690/220/870/marvel-comics-cartoon-entertainment.jpg",
+    photo:"https://www.boldstrokesbooks.com/assets/bsb/images/book-default-cover.jpg",
     eraId:1,
     userId:honeyUserObject.id,
 })
