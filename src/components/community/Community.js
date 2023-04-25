@@ -13,13 +13,6 @@ export const Community=({ searchTermState,selectTermState, searchTermAuthor })=>
 
     const navigate= useNavigate()
 
-    const getAllReviews= ()=>{
-        fetch("http://localhost:8088/reviews")
-       .then(response => response.json())
-       .then((ticketArray) => {
-        setReviews(ticketArray)
-       })
-    }
 
     useEffect(
         ()=>{
@@ -67,32 +60,6 @@ export const Community=({ searchTermState,selectTermState, searchTermAuthor })=>
         return 0
     })
 
-    const handleSaveButtonClick = (event,comicId) => {
-        event.preventDefault()
-        
-    
-       
-        const ToSendToAPIReview = {
-         readStatId:2,
-         review:"",
-         userId:honeyUserObject.id,
-         comicId:comicId,
-         isFavorite:false
-        }
-    
-      
-    
-        
-        return fetch("http://localhost:8088/reviews", {
-            method:"POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body:JSON.stringify(ToSendToAPIReview)
-        })
-        .then(response => response.json())
-        .then(getAllReviews)
-    }
 
     useEffect(
         ()=>{
@@ -144,16 +111,14 @@ export const Community=({ searchTermState,selectTermState, searchTermAuthor })=>
                 const comicReviews= reviews.filter(review=>review.comicId===comic.id)
                 const userReview = comicReviews.filter(comic=> comic.userId === honeyUserObject.id)
                 const comicId=comic.id
-                return <article key ={`comic--${comic.id}`} className="comicC">
-                    <div className="comicTop">
-                    <section><img className="image"src={comic.photo}></img></section>
-                    <section><Link className="titleLink" to={`/community/${comic.id}/reviews`}>{comic.title}</Link></section>
-                    <section>Author: {comic.author}</section>
-                    <section>Era: {comic?.era?.era}</section>
+                return <article key ={`comic--${comic.id}`} className="comicNewC">
+                    
+                    <section><Link className="titleLink" to={`/community/${comic.id}/reviews`}><img className="imageNew"src={comic.photo}></img></Link></section>
+                    <div className="comicLeft">
+                    <section>{comic.title}</section>
+                    <section className="small">Author: {comic.author}</section>
+                    <section className="small">Era: {comic?.era?.era}</section>
                     </div>
-                    <section>{ (userReview.length === 0) ?
-                        <button className="buttonR" onClick ={(clickEvent)=> handleSaveButtonClick(clickEvent,comicId)}>Add Comic</button> : ""
-                        }</section>
                        
                 </article>
             })

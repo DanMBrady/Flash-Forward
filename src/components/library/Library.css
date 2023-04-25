@@ -27,7 +27,7 @@
 }
 
 .comicC{
-    background: #cf1c15;
+    background:#cf1c15;
     height:340px;
     width:28%;
     margin: 20px;
@@ -57,6 +57,12 @@
     height:240px;
 }
 
+.imageBackground{
+    height:340px;
+    filter: blur(1px);
+  -webkit-filter: blur(3px);
+  position: relative;
+}
 
 
 .button{
@@ -160,3 +166,43 @@
   .favoriteC{
     margin-left:60px ;
   }
+
+  .imageNew{
+    height:440px;
+    width:291px
+    
+}
+.imageNew:hover{
+    height:440px;
+    width:291px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.02);
+}
+
+.comicNewC{
+    margin: 10px;
+    font-size: larger;
+    font-weight: bolder;
+    width:291px;
+     height:570px;
+     margin-left:30px;
+     
+}
+
+.comicLeft{
+    width:75%;
+    color:black
+}
+
+.small{
+    font-size: small;
+    color:rgb(93, 92, 92)
+    
+}
+
+.titleLinkNew{
+    color:black;
+    text-decoration: none;
+    
+}
+

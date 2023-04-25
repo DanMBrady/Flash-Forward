@@ -80,7 +80,7 @@ const alreadyReadSorted = alreadyRead.sort(function(a,b) {
 
 
 
-    return <article className="libContainer">
+    return <article>
         <h1>My Library</h1>
          <div className="library">
         <div className="reading">
@@ -91,14 +91,15 @@ const alreadyReadSorted = alreadyRead.sort(function(a,b) {
         (reading.length===0) ? <article className="comic"><a>You haven't added anything</a> to your Currently Reading yet</article> :
         readingSorted.map(read=>{
             const comicEra= eras.find(era=>era.id===read?.comic?.eraId)
-            return<article key={`currentlyReading--${read.id}`} className="comicC">
-                <div className="comicTop">
-                <article><img className="image"src={read?.comic?.photo}></img></article>
+
+            return<article key={`currentlyReading--${read.id}`} className="comicNewC">
+                
+                <article><Link className="titleLink" to={`/library/${read?.comic?.id}`}><img className="imageNew"src={read?.comic?.photo}></img></Link></article>
+                <div className="comicLeft">
             <article>{read?.comic?.title} </article>
-            <article>Author: {read?.comic?.author}</article>
-          <article>Era: {comicEra?.era}</article>
+            <article className="small">Author: {read?.comic?.author}</article>
+          <article className="small">Era: {comicEra?.era}</article>
           </div>
-          <button className="buttonR" onClick={() => navigate(`/library/${read?.comic?.id}`)}>Edit Comic</button>
         </article>
         })
        }
@@ -114,14 +115,14 @@ const alreadyReadSorted = alreadyRead.sort(function(a,b) {
 
         toReadSorted.map(read=>{
             const comicEra= eras.find(era=>era.id===read?.comic?.eraId)
-                return<article key={`toRead--${read.id}`} className="comicC">
-                    <div className="comicTop">
-         <article><img className="image"src={read?.comic?.photo}></img></article>
+                return<article key={`toRead--${read.id}`} className="comicNewC">
+                    
+         <article><Link className="titleLink" to={`/library/${read?.comic?.id}`}><img className="imageNew"src={read?.comic?.photo}></img></Link></article>
+         <div className="comicLeft">
             <article>{read?.comic?.title} </article>
-            <article>Author: {read?.comic?.author}</article>
-            <article>Era: {comicEra?.era}</article>
+            <article className="small">Author: {read?.comic?.author}</article>
+            <article className="small">Era: {comicEra?.era}</article>
             </div>
-            <button className="buttonR" onClick={() => navigate(`/library/${read?.comic?.id}`)}>Edit Comic</button>
              </article>
         } )
        }
@@ -134,14 +135,14 @@ const alreadyReadSorted = alreadyRead.sort(function(a,b) {
         (alreadyRead.length===0) ?  <article className="comic"><a>You haven't added anything</a> to your Already Read yet</article> :
         alreadyReadSorted.map(read=>{
             const comicEra= eras.find(era=>era.id===read?.comic?.eraId)
-            return<article key={`alreadyRead--${read.id}`} className="comicC">
-                  <div className="comicTop">
-           <article><img className="image"src={read?.comic?.photo}></img></article>
-                <article><Link className="titleLink" to={`/library/${read?.comic?.id}/add`}>{read?.comic?.title}</Link></article>
-                <article>Author: {read?.comic?.author}</article>
-                <article>Era: {comicEra?.era}</article>
-                </div>
-                <button className="buttonR" onClick={() => navigate(`/library/${read?.comic?.id}`)}>Edit Comic</button>
+            return<article key={`alreadyRead--${read.id}`} className="comicNewC">
+                 
+           <article><Link className="titleLink" to={`/library/${read?.comic?.id}`}><img className="imageNew"src={read?.comic?.photo}></img></Link></article>
+           <div className="comicLeft">
+                <article><Link className="titleLinkNew" to={`/library/${read?.comic?.id}/add`}>{read?.comic?.title}</Link></article>
+                <article className="small">Author: {read?.comic?.author}</article>
+                <article className="small">Era: {comicEra?.era}</article>
+               </div>
                 
             </article>
         })

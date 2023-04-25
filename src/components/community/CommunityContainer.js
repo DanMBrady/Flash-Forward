@@ -6,7 +6,7 @@ export const CommunityContainer =()=>{
     const [searchTerms, setSearchTerms]=useState("")
     const [searchAuthor, setSearchAuthor]=useState("")
     const [selectTerms,setSelectTerms]=useState("10")
-    return <article className="communityContainer">
+    return <article>
     <CommunitySearch setterFunction ={setSearchTerms} selectFunction={setSelectTerms} setterAuthorFunction ={setSearchAuthor}/>
     <Community searchTermState={searchTerms} selectTermState={selectTerms} searchTermAuthor={searchAuthor}/> 
 </article>
