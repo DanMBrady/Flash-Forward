@@ -15,7 +15,7 @@ export const CommunitySearch =({ setterFunction, selectFunction, setterAuthorFun
         },
         []
     )
-    return <article>
+    return <article className="comicSearchTop">
           <h1>Community Library</h1> 
           <div>
             <input 

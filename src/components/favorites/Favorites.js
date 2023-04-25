@@ -35,18 +35,21 @@ export const Favorites =() =>{
         return 0
     })
     const noFavorites = comics.every(comic=> comic?.comic?.isFavorite === false)
-    return <article className="favoriteC">
+    return <article>
         <h1>My Favorites</h1>
-        <article className="comicContainer">
+<article className="comicContainer">
         {
             (noFavorites) ? <article className="comic"><a>You haven't added anything</a> to your Favorites yet</article> :
             comicsSorted.map(comic=>{
                 const comicEra= eras.find(era=>era.id===comic?.comic?.eraId)
-                return<article key ={comic.id} className="comic">
-                     <article><img className="image"src={comic?.comic?.photo}></img></article>
-                <section>{comic?.comic?.title}</section>
-                <article>Author: {comic?.comic?.author}</article>
-                <article>Era: {comicEra?.era}</article>
+                return<article key ={comic.id} className="comicNewC">
+                     <article><img className="imageNew"src={comic?.comic?.photo}></img></article>
+                     <div className="comicLeft">
+                     <section>{comic?.comic?.title}</section>
+                     <article className="small">Author: {comic?.comic?.author}</article>
+                <article className="small">Era: {comicEra?.era}</article>
+                     </div>
+
                 </article>
         })
 }
