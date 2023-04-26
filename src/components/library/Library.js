@@ -4,8 +4,8 @@ import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 
 export const Library=()=>{
-    const localHoneyUser = localStorage.getItem("honey_user")
-    const honeyUserObject = JSON.parse(localHoneyUser)
+    const localFlashUser = localStorage.getItem("flash_user")
+    const flashUserObject = JSON.parse(localFlashUser)
     const [toRead,setToRead]=useState([])
     const[reading,setReading]=useState([])
     const [alreadyRead,setAlreadyRead]=useState([])
@@ -13,7 +13,7 @@ export const Library=()=>{
     const navigate=useNavigate()
 useEffect(
     ()=>{
-         fetch(`http://localhost:8088/reviews?_expand=comic&readStatId=2&userId=${honeyUserObject.id}`)
+         fetch(`http://localhost:8088/reviews?_expand=comic&readStatId=2&userId=${flashUserObject.id}`)
         .then(response => response.json())
         .then((comicArray)=>{
             setToRead(comicArray)
@@ -24,7 +24,7 @@ useEffect(
 )
 useEffect(
     ()=>{
-         fetch(`http://localhost:8088/reviews?_expand=comic&readStatId=1&userId=${honeyUserObject.id}`)
+         fetch(`http://localhost:8088/reviews?_expand=comic&readStatId=1&userId=${flashUserObject.id}`)
         .then(response => response.json())
         .then((comicArray)=>{
             setReading(comicArray)
@@ -35,7 +35,7 @@ useEffect(
 )
 useEffect(
     ()=>{
-         fetch(`http://localhost:8088/reviews?_expand=comic&readStatId=3&userId=${honeyUserObject.id}`)
+         fetch(`http://localhost:8088/reviews?_expand=comic&readStatId=3&userId=${flashUserObject.id}`)
         .then(response => response.json())
         .then((comicArray)=>{
             setAlreadyRead(comicArray)

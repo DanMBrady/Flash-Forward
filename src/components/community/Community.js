@@ -8,8 +8,8 @@ export const Community=({ searchTermState,selectTermState, searchTermAuthor })=>
     const [eras,setEras]=useState([{
         id:1
     }])
-    const localHoneyUser = localStorage.getItem("honey_user")
-    const honeyUserObject = JSON.parse(localHoneyUser)
+    const localFlashUser = localStorage.getItem("flash_user")
+    const flashUserObject = JSON.parse(localFlashUser)
 
     const navigate= useNavigate()
 
@@ -109,7 +109,7 @@ export const Community=({ searchTermState,selectTermState, searchTermAuthor })=>
         {
             communitySorted.map(comic=>{
                 const comicReviews= reviews.filter(review=>review.comicId===comic.id)
-                const userReview = comicReviews.filter(comic=> comic.userId === honeyUserObject.id)
+                const userReview = comicReviews.filter(comic=> comic.userId === flashUserObject.id)
                 const comicId=comic.id
                 return <article key ={`comic--${comic.id}`} className="comicNewC">
                     

@@ -2,8 +2,8 @@ import { useState,useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 export const AddReview =()=>{
     const navigate= useNavigate()
-    const localHoneyUser = localStorage.getItem("honey_user")
-    const honeyUserObject = JSON.parse(localHoneyUser)
+    const localFlashUser = localStorage.getItem("flash_user")
+    const flashUserObject = JSON.parse(localFlashUser)
     const {comicId} = useParams()
     const [review,setReview]=useState({
         review:"This Comic is Good",
@@ -11,7 +11,7 @@ export const AddReview =()=>{
     })
     useEffect(
         ()=>{
-            fetch(`http://localhost:8088/reviews?comicId=${comicId}&userId=${honeyUserObject.id}&_expand=comic`)
+            fetch(`http://localhost:8088/reviews?comicId=${comicId}&userId=${flashUserObject.id}&_expand=comic`)
             .then(response => response.json())
             .then((data)=>{
                 const singleReview =data[0]

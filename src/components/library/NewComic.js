@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom"
 import Swal from "sweetalert2"
 export const NewComic=()=>{
     const navigate= useNavigate()
-    const localHoneyUser = localStorage.getItem("honey_user")
-    const honeyUserObject = JSON.parse(localHoneyUser)
+    const localFlashUser = localStorage.getItem("flash_user")
+    const flashUserObject = JSON.parse(localFlashUser)
 const [eras,setEras]=useState([])
 const [readStatus,setReadStatus]=useState([])
 const [comic,setComic]=useState({
@@ -12,12 +12,12 @@ const [comic,setComic]=useState({
     author:"",
     photo:"https://www.boldstrokesbooks.com/assets/bsb/images/book-default-cover.jpg",
     eraId:1,
-    userId:honeyUserObject.id,
+    userId:flashUserObject.id,
 })
 const [review,setReview]=useState({
     readStatId:1,
     review:"",
-    userId:honeyUserObject.id,
+    userId:flashUserObject.id,
     isFavorite:false,
 })
 
