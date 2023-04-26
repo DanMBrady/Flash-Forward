@@ -1,9 +1,10 @@
 .home{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 600px;
-    
+    height: 700px;
+    width:100%;
+    background: #b81711;
+    margin: 0;
 
 }
 
@@ -16,6 +17,7 @@
     width:50%;
     height:300px;
     font-size: larger;
+    
 }
 .larger{
     font-size: x-large;
@@ -27,3 +29,71 @@
     margin-bottom: 10px;
     margin-top: 10px;
 }
+
+.photoSlide{
+    height:655px;
+    width:453px;
+}
+
+.slideSide{
+    background: #cf1c15;
+}
+
+.slider {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%;
+    background-size: cover;
+    background-position: center;
+    animation: slide 10s infinite;
+  }
+  
+  .slider .slide:nth-child(1) {
+    background-image: url('https://imgix.ranker.com/user_node_img/50104/1002077684/original/1002077684-photo-u1?auto=format&q=60&fit=crop&fm=pjpg&dpr=2&w=375');
+    animation-delay: -0;
+  }
+  
+  .slider .slide:nth-child(2) {
+    background-image: url('https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/04/Watchmen-Feat-Image.jpg');
+    animation-delay: -2s;
+  }
+    
+  .slider .slide:nth-child(3) {
+    background-image: url('https://pyxis.nymag.com/v1/imgs/7db/be3/a40f060ca41c7dd092f469785bd2be9b83-11-kingdom-come-1.rsocial.w1200.jpg');
+    animation-delay: -4s;
+  }
+ 
+  .slider .slide:nth-child(4) {
+    background-image: url('https://i0.wp.com/www.lacasadeel.net/wp-content/uploads/2016/05/Civil-War-bandos-originales.jpg');
+    animation-delay: -6s;
+  }
+
+  
+  .slider .slide:nth-child(5) {
+    background-image: url('https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/09/BatmanImages-DKR-Cropped.jpg');
+    animation-delay: -8s;
+  }
+  
+  @keyframes slide {
+    0%, 15%, 100% {
+      transform: translateX(0);
+      animation-timing-function: ease;
+    }
+    20% {
+      transform: translateX(-100%);
+      animation-timing-function: step-end;
+    }
+    95% {
+      transform: translateX(100%);
+      animation-timing-function: ease;
+    }
+  }
