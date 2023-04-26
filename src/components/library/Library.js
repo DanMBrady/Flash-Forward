@@ -94,7 +94,7 @@ const alreadyReadSorted = alreadyRead.sort(function(a,b) {
 
             return<article key={`currentlyReading--${read.id}`} className="comicNewC">
                 
-                <article><Link className="titleLink" to={`/library/${read?.comic?.id}`}><img className="imageNew"src={read?.comic?.photo}></img></Link></article>
+                <article><Link  to={`/library/${read?.comic?.id}`}><img className="imageNew"src={read?.comic?.photo}></img></Link></article>
                 <div className="comicLeft">
             <article>{read?.comic?.title} </article>
             <article className="small">Author: {read?.comic?.author}</article>
@@ -117,7 +117,7 @@ const alreadyReadSorted = alreadyRead.sort(function(a,b) {
             const comicEra= eras.find(era=>era.id===read?.comic?.eraId)
                 return<article key={`toRead--${read.id}`} className="comicNewC">
                     
-         <article><Link className="titleLink" to={`/library/${read?.comic?.id}`}><img className="imageNew"src={read?.comic?.photo}></img></Link></article>
+         <article><Link to={`/library/${read?.comic?.id}`}><img className="imageNew"src={read?.comic?.photo}></img></Link></article>
          <div className="comicLeft">
             <article>{read?.comic?.title} </article>
             <article className="small">Author: {read?.comic?.author}</article>
@@ -137,7 +137,7 @@ const alreadyReadSorted = alreadyRead.sort(function(a,b) {
             const comicEra= eras.find(era=>era.id===read?.comic?.eraId)
             return<article key={`alreadyRead--${read.id}`} className="comicNewC">
                  
-           <article><Link className="titleLink" to={`/library/${read?.comic?.id}`}><img className="imageNew"src={read?.comic?.photo}></img></Link></article>
+           <article><Link to={`/library/${read?.comic?.id}`}><img className="imageNew"src={read?.comic?.photo}></img></Link></article>
            <div className="comicLeft">
                 <article><Link className="titleLinkNew" to={`/library/${read?.comic?.id}/add`}>{read?.comic?.title}</Link></article>
                 <article className="small">Author: {read?.comic?.author}</article>
