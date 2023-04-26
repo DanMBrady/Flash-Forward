@@ -19,8 +19,8 @@ export const EditComic =()=>{
     })
     const [eras,setEras]=useState([])
     const [readStatus,setReadStatus]=useState([])
-    const localHoneyUser = localStorage.getItem("honey_user")
-    const honeyUserObject = JSON.parse(localHoneyUser)
+    const localFlashUser = localStorage.getItem("flash_user")
+    const flashUserObject = JSON.parse(localFlashUser)
 
     useEffect(
         ()=>{
@@ -36,7 +36,7 @@ export const EditComic =()=>{
 
        useEffect(
         ()=>{
-            fetch(`http://localhost:8088/reviews?comicId=${comicId}&userId=${honeyUserObject.id}`)
+            fetch(`http://localhost:8088/reviews?comicId=${comicId}&userId=${flashUserObject.id}`)
             .then(response => response.json())
             .then((data)=>{
                 const singleReview =data[0]
@@ -124,7 +124,7 @@ export const EditComic =()=>{
     <article className="comicCover"><img className="image"src ={comic.photo}></img></article>
     <form>
         {
-            (comic.userId===honeyUserObject.id) ? 
+            (comic.userId===flashUserObject.id) ? 
 
         <fieldset>
             <div className="form-group">
@@ -146,7 +146,7 @@ export const EditComic =()=>{
         :<h2>You Did Not Create This Comic</h2>
                 }
                  {
-            (comic.userId===honeyUserObject.id) ? 
+            (comic.userId===flashUserObject.id) ? 
 
         <fieldset>
             <div className="form-group">
@@ -168,7 +168,7 @@ export const EditComic =()=>{
          :""
         }
  {
-            (comic.userId===honeyUserObject.id) ? 
+            (comic.userId===flashUserObject.id) ? 
          <fieldset>
             <div className="form-group">
                 <label htmlFor="specialty">Cover:</label>
@@ -189,7 +189,7 @@ export const EditComic =()=>{
  :""
 }
 {
-            (comic.userId===honeyUserObject.id) ? 
+            (comic.userId===flashUserObject.id) ? 
 <fieldset>
                 <div className="">
                     <label htmlFor="specialty">Era Select:</label>
@@ -278,7 +278,7 @@ export const EditComic =()=>{
             </fieldset>
             <button  onClick ={(clickEvent)=> handleSaveButtonClick(clickEvent)} className="button-28">Save Comic</button>
             {
-            (comic.userId===honeyUserObject.id) ? 
+            (comic.userId===flashUserObject.id) ? 
             <button  onClick ={(clickEvent)=> handleDeleteButtonClick(clickEvent)} className="button-28">Delete Comic</button>
            : <button  onClick ={(clickEvent)=> handleRemoveButtonClick(clickEvent)} className="button-28">Remove Comic</button>}
         </form>

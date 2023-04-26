@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react"
 
 export const Favorites =() =>{
-    const localHoneyUser = localStorage.getItem("honey_user")
-    const honeyUserObject = JSON.parse(localHoneyUser)
+    const localFlashUser = localStorage.getItem("flash_user")
+    const flashUserObject = JSON.parse(localFlashUser)
     const [comics,setComics] =useState([])
     const [eras,setEras]=useState([])
     useEffect(
         ()=>{
-             fetch(`http://localhost:8088/reviews?_expand=comic&isFavorite=true&userId=${honeyUserObject.id}`)
+             fetch(`http://localhost:8088/reviews?_expand=comic&isFavorite=true&userId=${flashUserObject.id}`)
             .then(response => response.json())
             .then((comicArray)=>{
                 setComics(comicArray)

@@ -2,8 +2,8 @@ import { useState,useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 export const CommunityReviews =()=>{
     const navigate= useNavigate()
-    const localHoneyUser = localStorage.getItem("honey_user")
-    const honeyUserObject = JSON.parse(localHoneyUser)
+    const localFlashUser = localStorage.getItem("flash_user")
+    const flashUserObject = JSON.parse(localFlashUser)
     const {comicId} = useParams()
     const [comic,setComic]=useState([])
     const [reviews,setReviews]=useState([])
@@ -70,7 +70,7 @@ export const CommunityReviews =()=>{
         const ToSendToAPIReview = {
          readStatId:2,
          review:"",
-         userId:honeyUserObject.id,
+         userId:flashUserObject.id,
          comicId:CorrectComicId,
          isFavorite:false
         }
@@ -89,7 +89,7 @@ export const CommunityReviews =()=>{
         .then(getAllReviews)
     }
     const comicReviews= allReviews.filter(review=>review.comicId===comic.id)
-    const userReview = comicReviews.filter(comic=> comic.userId === honeyUserObject.id)
+    const userReview = comicReviews.filter(comic=> comic.userId === flashUserObject.id)
     const CorrectComicId=comic.id
 
     return <article className="reviewS">
@@ -121,7 +121,7 @@ export const CommunityReviews =()=>{
    
             
     {   
-            (honeyUserObject.admin) ? <article><button onClick ={(clickEvent)=> handleDeleteButtonClick(clickEvent)} className="button-30">Delete Comic</button></article> : ""
+            (flashUserObject.admin) ? <article><button onClick ={(clickEvent)=> handleDeleteButtonClick(clickEvent)} className="button-30">Delete Comic</button></article> : ""
     }
      
     </article>

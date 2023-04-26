@@ -24,10 +24,10 @@ export const NavBar = () => {
             </li>
             </div>
             {
-                localStorage.getItem("honey_user")
+                localStorage.getItem("flash_user")
                     ? <li className="navbar__item navbar__logout">
                         <Link className="navbar__link log" to="" onClick={() => {
-                            localStorage.removeItem("honey_user")
+                            localStorage.removeItem("flash_user")
                             navigate("/", {replace: true})
                         }}>Logout</Link>
                     </li>
