@@ -58,28 +58,28 @@
   }
   
   .slider .slide:nth-child(1) {
-    background-image: url('https://imgix.ranker.com/user_node_img/50104/1002077684/original/1002077684-photo-u1?auto=format&q=60&fit=crop&fm=pjpg&dpr=2&w=375');
+    background-image: url('../photos/spiderman.png');
     animation-delay: -0;
   }
   
   .slider .slide:nth-child(2) {
-    background-image: url('https://static1.cbrimages.com/wordpress/wp-content/uploads/2020/04/Watchmen-Feat-Image.jpg');
+    background-image: url('../photos/Ror.png');
     animation-delay: -2s;
   }
     
   .slider .slide:nth-child(3) {
-    background-image: url('https://pyxis.nymag.com/v1/imgs/7db/be3/a40f060ca41c7dd092f469785bd2be9b83-11-kingdom-come-1.rsocial.w1200.jpg');
+    background-image: url('../photos/Kingdom.png');
     animation-delay: -4s;
   }
  
   .slider .slide:nth-child(4) {
-    background-image: url('https://i0.wp.com/www.lacasadeel.net/wp-content/uploads/2016/05/Civil-War-bandos-originales.jpg');
+    background-image: url('../photos/Civil.png');
     animation-delay: -6s;
   }
 
   
   .slider .slide:nth-child(5) {
-    background-image: url('https://static1.cbrimages.com/wordpress/wp-content/uploads/2019/09/BatmanImages-DKR-Cropped.jpg');
+    background-image: url('../photos/Batman.png');
     animation-delay: -8s;
   }
   

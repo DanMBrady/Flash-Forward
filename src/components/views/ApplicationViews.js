@@ -7,6 +7,8 @@ import { AddReview } from "../library/AddReview"
 import { EditComic } from "../library/EditComic"
 import { Library } from "../library/Library"
 import { NewComic } from "../library/NewComic"
+import newLogo from "../photos/newLogo.png"
+import spiderman from "../photos/spiderman.png"
 import "./Home.css"
 export const ApplicationViews = () => {
 	return (
