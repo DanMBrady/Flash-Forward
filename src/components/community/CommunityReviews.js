@@ -92,7 +92,7 @@ export const CommunityReviews =()=>{
     const userReview = comicReviews.filter(comic=> comic.userId === flashUserObject.id)
     const CorrectComicId=comic.id
 
-    return <article className="reviewS">
+    return <article className="reviewS addFifty">
         <h1>Community Reviews</h1>
         
         <article className="newComicContainer">

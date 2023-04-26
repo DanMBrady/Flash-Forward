@@ -118,7 +118,7 @@ export const EditComic =()=>{
         }) 
     }
    
-    return <article>
+    return <article className="addFifty">
     <h1>Edit Comic</h1>
     <article className="newComicContainer">
     <article className="comicCover"><img className="image"src ={comic.photo}></img></article>
