@@ -6,7 +6,6 @@ import { Login } from "./auth/Login"
 import { Register } from "./auth/Register"
 import "./FlashForward.css"
 
-
 export const FlashForward = () => {
 	return <Routes>
 		<Route path="/login" element={<Login />} />
