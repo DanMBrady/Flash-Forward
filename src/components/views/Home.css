@@ -58,7 +58,7 @@
   }
   
   .slider .slide:nth-child(1) {
-    background-image: url('https://imgix.ranker.com/user_node_img/50104/1002077684/original/1002077684-photo-u1?auto=format&q=60&fit=crop&fm=pjpg&dpr=2&w=375');
+    background-image: url('..photos/spiderman.png');
     animation-delay: -0;
   }
   
