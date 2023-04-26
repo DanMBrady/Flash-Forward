@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 600px;
+    
 
 }
 
@@ -23,4 +24,6 @@
 .largeHeader{
     font-size: xx-large;
     font-weight: lighter;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }

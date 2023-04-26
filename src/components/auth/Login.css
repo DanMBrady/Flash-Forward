@@ -13,6 +13,11 @@ fieldset {
     display: inline-block;
     margin: 0 auto;
     text-align: left;
+    border-radius: 20px;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .form--login > fieldset > input[type="email"] {
@@ -26,7 +31,7 @@ fieldset {
 
 .form-control {
     display: block;
-    width: 94%;
+    width: 70%;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -39,24 +44,106 @@ fieldset {
     border-radius: .25rem;
     -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    
 }
 
-.container--login {
-    text-align: center;
-}
 
-.form--login {
-    background-position-x: right;
-    z-index: 1;
-    min-height: 25rem;
-    min-width: 45rem;
-    background-color: hsla(0,0%,100%,0.40);
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-}
+
 
 .button--close {
     position: relative;
     bottom: -2rem;
 }
 
+.loginFull{
+    background:#cf1c15;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loginMain{
+    background: white;
+    height:500px;
+    width:30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 20px;
+    margin-bottom: 100px;
+    
+}
+
+.topLogin{
+    background: #b81711;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px 20px 0px 0px;
+
+}
+
+.loginButton{
+    background: #b81711;
+    border-radius: 10px;
+    width:76%;
+    height: 50px;
+    color:white;
+    font-size:larger ;
+    font-weight: bolder;
+}
+.registerButton{
+    background: #b81711;
+    border-radius: 10px;
+    width:74%;
+    height: 50px;
+    color:white;
+    font-size:larger ;
+    font-weight: bolder;
+}
+.midLogin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:300px;
+
+    
+}
+
+.formLogin{
+    width:100%;
+    border-radius: 20px;
+}
+
+.loginIm{
+    height:110px;
+   
+}
+
+.green{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.registerLink{
+    text-decoration: none;
+    color:#b81711;
+}
+
+.registerMain{
+    background: white;
+    height:600px;
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 20px;
+    margin-bottom: 100px;
+    
+}

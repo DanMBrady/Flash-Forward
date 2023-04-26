@@ -1,10 +1,11 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"
+import newLogo from "../photos/newLogo.png"
 import "./Login.css"
 
 export const Login = () => {
-    const [email, set] = useState("bradydan@email.com")
+    const [email, set] = useState("")
     const navigate = useNavigate()
 
     const handleLogin = (e) => {
@@ -28,14 +29,17 @@ export const Login = () => {
             })
     }
 
-    return (
-        <main className="container--login">
-            <section>
-                <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Flash Forward</h1>
-                    <h2>Please sign in</h2>
-                    <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
+    return <article className="loginFull">
+        <section className="loginMain">
+                <form className="formLogin" onSubmit={handleLogin}>
+                    <div className="topLogin">
+                    <img className="loginIm"src={newLogo}></img>
+                    </div>
+                    <div className="midLogin">
+                        
+                    <h2>Login Form</h2>
+                    <fieldset className="green">
+                        <label htmlFor="inputEmail"></label>
                         <input type="email"
                             value={email}
                             onChange={evt => set(evt.target.value)}
@@ -43,17 +47,18 @@ export const Login = () => {
                             placeholder="Email address"
                             required autoFocus />
                     </fieldset>
-                    <fieldset>
-                        <button type="submit">
-                            Sign in
+                    <fieldset className="green">
+                        <button className="loginButton"type="submit">
+                            Login
                         </button>
                     </fieldset>
+                    </div>
                 </form>
+            <section className="link--register">Not a member yet?
+                <Link className="registerLink"to="/register"> Signup now</Link>
             </section>
-            <section className="link--register">
-                <Link to="/register">Not a member yet?</Link>
-            </section>
-        </main>
-    )
+        </section>
+        </article>
+    
 }
 

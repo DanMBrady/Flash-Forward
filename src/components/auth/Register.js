@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import newLogo from "../photos/newLogo.png"
 import "./Login.css"
 
 export const Register = (props) => {
@@ -54,33 +55,36 @@ export const Register = (props) => {
         setCustomer(copy)
     }
 
-    return (
-        <main style={{ textAlign: "center" }}>
+    return <article className="loginFull">
+       <section className="registerMain">
             <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Flash Forward</h1>
-                <fieldset>
-                    <label htmlFor="fullName"> Full Name </label>
+            <div className="topLogin">
+            <img className="loginIm"src={newLogo}></img>
+            </div>
+            <h2>Register Form</h2>
+                <fieldset className="green">
+                    <label htmlFor="fullName"></label>
                     <input onChange={updateCustomer}
                            type="text" id="fullName" className="form-control"
-                           placeholder="Enter your name" required autoFocus />
+                           placeholder="Full name" required autoFocus />
                 </fieldset>
-                <fieldset>
-                    <label htmlFor="email"> Username </label>
+                <fieldset className="green">
+                    <label htmlFor="email"></label>
                     <input onChange={updateCustomer}
                         type="userName" id="userName" className="form-control"
                         placeholder="Username" required />
                 </fieldset>
-                <fieldset>
-                    <label htmlFor="email"> Email address </label>
+                <fieldset className="green">
+                    <label htmlFor="email"></label>
                     <input onChange={updateCustomer}
-                        type="email" id="email" className="form-control"
+                        type="userName" id="email" className="form-control"
                         placeholder="Email address" required />
                 </fieldset>
-                <fieldset>
-                    <button type="submit"> Register </button>
+                <fieldset className="green">
+                    <button className="registerButton" type="submit"> Register </button>
                 </fieldset>
             </form>
-        </main>
-    )
+        </section>
+   </article>
 }
 
