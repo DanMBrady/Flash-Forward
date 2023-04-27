@@ -1,9 +1,10 @@
 .home{
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 600px;
-    
+    height: 700px;
+    width:100%;
+    background: #b81711;
+    margin: 0;
 
 }
 
@@ -16,6 +17,7 @@
     width:50%;
     height:300px;
     font-size: larger;
+    
 }
 .larger{
     font-size: x-large;
@@ -27,3 +29,71 @@
     margin-bottom: 10px;
     margin-top: 10px;
 }
+
+.photoSlide{
+    height:655px;
+    width:453px;
+}
+
+.slideSide{
+    background: #cf1c15;
+}
+
+.slider {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+  }
+  
+  .slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width:100%;
+    background-size: cover;
+    background-position: center;
+    animation: slide 10s infinite;
+  }
+  
+  .slider .slide:nth-child(1) {
+    background-image: url('../photos/spiderman.png');
+    animation-delay: -0;
+  }
+  
+  .slider .slide:nth-child(2) {
+    background-image: url('../photos/Ror.png');
+    animation-delay: -2s;
+  }
+    
+  .slider .slide:nth-child(3) {
+    background-image: url('../photos/Kingdom.png');
+    animation-delay: -4s;
+  }
+ 
+  .slider .slide:nth-child(4) {
+    background-image: url('../photos/Civil.png');
+    animation-delay: -6s;
+  }
+
+  
+  .slider .slide:nth-child(5) {
+    background-image: url('../photos/Batman.png');
+    animation-delay: -8s;
+  }
+  
+  @keyframes slide {
+    0%, 15%, 100% {
+      transform: translateX(0);
+      animation-timing-function: ease;
+    }
+    20% {
+      transform: translateX(-100%);
+      animation-timing-function: step-end;
+    }
+    95% {
+      transform: translateX(100%);
+      animation-timing-function: ease;
+    }
+  }

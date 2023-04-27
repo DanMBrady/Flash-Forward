@@ -97,7 +97,7 @@ const handleSaveButtonClick = (event) => {
 
    
 }
-    return<article>
+    return<article className="addFifty">
         <h1>New Comic</h1>
         <article className="newComicContainer">
         <article className="comicCover"><img className="image"src ={comic.photo}></img></article>

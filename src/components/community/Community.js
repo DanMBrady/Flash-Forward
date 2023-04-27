@@ -113,7 +113,7 @@ export const Community=({ searchTermState,selectTermState, searchTermAuthor })=>
                 const comicId=comic.id
                 return <article key ={`comic--${comic.id}`} className="comicNewC">
                     
-                    <section><Link className="titleLink" to={`/community/${comic.id}/reviews`}><img className="imageNew"src={comic.photo}></img></Link></section>
+                    <section><Link to={`/community/${comic.id}/reviews`}><img className="imageNew"src={comic.photo}></img></Link></section>
                     <div className="comicLeft">
                     <section>{comic.title}</section>
                     <section className="small">Author: {comic.author}</section>

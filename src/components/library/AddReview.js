@@ -49,7 +49,7 @@ export const AddReview =()=>{
     }
 
 
-    return <article className="reviewS">
+    return <article className="reviewS addFifty">
         <h1>Add Your Review</h1>
          <article className="newComicContainer">
         <article><img className="comicCoverA"src ={review?.comic?.photo}></img></article>
