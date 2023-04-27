@@ -18,7 +18,8 @@ export const Login = () => {
                     const user = foundUsers[0]
                     localStorage.setItem("flash_user", JSON.stringify({
                         id: user.id,
-                       admin: user.isAdmin
+                       admin: user.isAdmin,
+                       superAdmin:user.isSuperAdmin,
                     }))
 
                     navigate("/")
