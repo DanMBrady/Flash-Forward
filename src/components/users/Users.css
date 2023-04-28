@@ -51,4 +51,18 @@
 
 .spaceProfile{
     margin-bottom: 25px;
+    display: flex;
+    
+}
+
+.userSpace{
+    margin-left: 10px;
+}
+
+.profileButton{
+    font-weight: bolder;
+}
+
+.profileRadio{
+   accent-color:#cf1c15;
 }
