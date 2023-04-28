@@ -5,6 +5,8 @@ import "./NavBar.css"
 
 export const NavBar = () => {
     const navigate = useNavigate()
+    const localFlashUser = localStorage.getItem("flash_user")
+    const flashUserObject = JSON.parse(localFlashUser)
 
     return (
         <ul className="navbar">
@@ -22,6 +24,11 @@ export const NavBar = () => {
             <li >
                 <Link className="navbar__link spaceHead" to="/favorites">Favorites</Link>
             </li>
+            {
+                (flashUserObject.superAdmin) ?  <li >
+                <Link className="navbar__link spaceHead" to="/users">Users</Link>
+            </li> : ""
+            }
             </div>
             {
                 localStorage.getItem("flash_user")

@@ -14,16 +14,14 @@
 }
 .comic{
     background: #cf1c15;
-    height:340px;
-    width:26%;
-    margin: 20px;
+    height:440px;
+    width: 291px;
+    margin: 30px;
     color:white;
     display: flex;
     flex-direction: column;
-    padding: 10px;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
     font-weight: 600;
     font-size: larger;
 }

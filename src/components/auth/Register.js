@@ -8,7 +8,8 @@ export const Register = (props) => {
         email: "",
         fullName: "",
         userName:"",
-        isAdmin: false
+        isAdmin: false,
+        isSuperAdmin:false,
     })
     let navigate = useNavigate()
 

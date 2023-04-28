@@ -9,6 +9,8 @@ import { Library } from "../library/Library"
 import { NewComic } from "../library/NewComic"
 import newLogo from "../photos/newLogo.png"
 import spiderman from "../photos/spiderman.png"
+import { IndividualUser } from "../users/IndividualUser"
+import { Users } from "../users/Users"
 import "./Home.css"
 export const ApplicationViews = () => {
 	return (
@@ -38,6 +40,9 @@ export const ApplicationViews = () => {
                 <Route path="community/:comicId/reviews" element={ <CommunityReviews/>} />
                 <Route path="newComic" element={ <NewComic/> } />
                 <Route path="favorites" element={ <Favorites/>} />
+                <Route path="users" element={ <Users/>} />
+                <Route path="users/:userId" element={ <IndividualUser/>} />
+
                 
         </Routes>
     )
