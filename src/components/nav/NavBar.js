@@ -24,6 +24,9 @@ export const NavBar = () => {
             <li >
                 <Link className="navbar__link spaceHead" to="/favorites">Favorites</Link>
             </li>
+            <li >
+                <Link className="navbar__link spaceHead" to="/bookclubs">Book Clubs</Link>
+            </li>
             {
                 (flashUserObject.superAdmin) ?  <li >
                 <Link className="navbar__link spaceHead" to="/users">Users</Link>

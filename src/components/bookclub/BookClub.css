@@ -1,0 +1,71 @@
+.bookClubPhoto{
+    height:200px;
+    width:200px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+.bookClubPhotoPage{
+    height:100px;
+    width:100px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+
+.bookClubPhoto:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+
+.clubContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    justify-content: center;
+}
+
+.clubs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 90px;
+    margin-right: 90px;
+    margin-bottom: 60px;
+}
+
+.clubBio{
+    display: flex;
+    margin: 20px;
+    margin-top: 30px;
+    width:80%;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgb(237, 236, 236);
+
+}
+
+.clubContainerTwo{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    justify-content: center;
+}
+
+.clubText{
+    padding: 20px;
+    padding-right: 100px;
+    display: flex;
+    flex-direction: column;
+    font-size: larger;
+    font-weight: bolder;
+    
+}
+
+.clubSpacing{
+    margin-bottom: 35px;
+}
+
+.topSpacing{
+    margin-top: 20px;
+}

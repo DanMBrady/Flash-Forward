@@ -1,4 +1,6 @@
 import { Outlet, Route, Routes } from "react-router-dom"
+import { BookClub } from "../bookclub/BookClub"
+import { IndividualBookClub } from "../bookclub/IndividualBookClub"
 import { Community } from "../community/Community"
 import { CommunityContainer } from "../community/CommunityContainer"
 import { CommunityReviews } from "../community/CommunityReviews"
@@ -42,6 +44,8 @@ export const ApplicationViews = () => {
                 <Route path="favorites" element={ <Favorites/>} />
                 <Route path="users" element={ <Users/>} />
                 <Route path="users/:userId" element={ <IndividualUser/>} />
+                <Route path="bookclubs" element={ <BookClub/>} />
+                <Route path="bookclubs/:bookClubId" element={ <IndividualBookClub/>} />
 
                 
         </Routes>
