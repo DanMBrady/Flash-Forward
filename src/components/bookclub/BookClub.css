@@ -69,3 +69,8 @@
 .topSpacing{
     margin-top: 20px;
 }
+
+.comicSelectButton{
+    border: none;
+    background: white;
+}

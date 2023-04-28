@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { useParams } from "react-router-dom"
 import "./BookClub.css"
 export const IndividualBookClub =()=>{
+    const navigate =useNavigate()
     const [bookClub,setBookClub]=useState([{
         name:"hello"
     }])
@@ -39,7 +40,7 @@ export const IndividualBookClub =()=>{
         <section className="clubContainerTwo">
         <section className="clubBio">{
             (flashUserObject.admin) ?
-            <img className="imageNew"src={bookClub?.comic?.photo}></img> :  <img className="imageNew"src={bookClub?.comic?.photo}></img>
+            <Link to={`/bookclubs/${bookClub.id}/comics`}><img className="imageNew"src={bookClub?.comic?.photo}></img></Link> :  <img className="imageNewNot"src={bookClub?.comic?.photo}></img>
         }
         <div className="clubText">
         <h2>Currently Reading</h2>

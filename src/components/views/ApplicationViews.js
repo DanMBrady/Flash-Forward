@@ -1,5 +1,6 @@
 import { Outlet, Route, Routes } from "react-router-dom"
 import { BookClub } from "../bookclub/BookClub"
+import { ComicClub } from "../bookclub/ComicClub"
 import { IndividualBookClub } from "../bookclub/IndividualBookClub"
 import { Community } from "../community/Community"
 import { CommunityContainer } from "../community/CommunityContainer"
@@ -46,6 +47,7 @@ export const ApplicationViews = () => {
                 <Route path="users/:userId" element={ <IndividualUser/>} />
                 <Route path="bookclubs" element={ <BookClub/>} />
                 <Route path="bookclubs/:bookClubId" element={ <IndividualBookClub/>} />
+                <Route path="bookclubs/:bookClubId/comics" element={ <ComicClub/>} />
 
                 
         </Routes>
